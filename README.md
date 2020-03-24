@@ -52,8 +52,8 @@ wget -q http://hbo.epub.fun/iptv.sh && bash iptv.sh
 ## 自动更新指定的json文件
 
 ```bash
-"sync_file":"/usr/local/nginx/html/channels.json", # 公开目录的json
-"sync_index":"data:2:channels", # 必须指定到m3u8直播源所在的数组这一级，比如这里 ObjectJson.data[2].channels
+"sync_file":"/usr/local/nginx/html/channels.json", # 公开目录的json，多个文件用空格分隔
+"sync_index":"data:2:channels", # 必须指定到m3u8直播源所在的数组这一级，比如这里 ObjectJson.data[2].channels ， 多个 sync_index 用空格分隔
 "sync_pairs":"chnl_name:channel_name,chnl_id:output_dir_name,chnl_pid:pid,chnl_cat=港澳台,url=http://xxx.com/live,schedule:output_dir_name", # 值映射用:号，如果直接赋值用=号（公开的live根目录会自动补上完整的m3u8地址）
 "schedule_file":"/usr/local/nginx/html/schedule.json" # 使用命令 tv s 自建节目表
 ```
